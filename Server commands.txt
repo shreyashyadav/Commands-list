@@ -14,6 +14,7 @@ $ ssh –f –N –L  localhost:7778:ip_broad:port_broad  username@host_ip  –p
 		Step4 - Restart Notebook server
 Final - After restart while creating a new notebook, we can see the name of our venv in the list
 
+------------------------------------------------------------------------------------------------
 
 Screen -Utility  - 
 Installation - 
@@ -31,6 +32,10 @@ $ screen -rd <screen-name>
 To List all Screens - 
 $ screen -ls
 
+
+-------------------------------------------------------------------------------------------------
+VIRTUAL Environent :
+
 # Steps to create virtual environment
 $ sudo apt install python3.6
 $ sudo apt install python3.6-venv
@@ -46,7 +51,10 @@ $ source ~/Tensorflow2.2_VIRT/bin/activate
 Tensorflow2.6_venv/
 $ source ~/Tensorflow2.6_venv/bin/activate
 
-# Playing with docker
+
+--------------------------------------------------------------------------------------------------------------
+
+DOCKER :-
 
 $ sudo docker ps -a   --> to display all running docker
 $ sudo docker start  <docker_name>  --> to start a docker 
@@ -60,8 +68,8 @@ $ sudo docker run -e NVIDIA_VISIBLE_DEVICES=0,1,2,3 --runtime=nvidia -v /tmp/.X1
 ssh root@10.210.0.165 -p 2224
 pwd - Welcome@123
 
-# To access screen
-screen -rd train
+-----------------------------------------------------------------------------------------------------------------
+GIT :
 
 
 ### GIT Commands - 
