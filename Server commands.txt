@@ -1,0 +1,80 @@
+1. Setting up server - 
+$ apt –get install jupyter-notebook
+$ jupyter notebook –no-browser  - -ip=ip_broad  - -port=port_broad  - -allow-root
+			i. Ip_broad – IP on which server is accessible
+			ii. Port_broad – port no on which service will run
+	2. Setting up client – First we need to forward  local port in client machine to server port.
+$ ssh –f –N –L  localhost:7778:ip_broad:port_broad  username@host_ip  –p host_port_if_any
+		-L :  [bind_address:]port:host:hostport
+-N : Do not execute a remote command. This is useful for just forwarding ports (protocol version 2 only).
+	3. Adding Virtual Environent in Jupyter Notebook - 
+		Step1 -  activate venv 
+		Step2 - pip3 install ipykernel
+		Step3 - ipython kernel install --user --name=venv_name
+		Step4 - Restart Notebook server
+Final - After restart while creating a new notebook, we can see the name of our venv in the list
+
+
+Screen -Utility  - 
+Installation - 
+$ sudo apt install screen
+
+Create a screen - 
+$ screen -S screen1
+
+To get out of screen 
+ctrl+a, ctrl+d - Detach Screen from Session
+
+To re-attach screen -
+$ screen -rd <screen-name>
+
+To List all Screens - 
+$ screen -ls
+
+# Steps to create virtual environment
+$ sudo apt install python3.6
+$ sudo apt install python3.6-venv
+$ python3.6 -m venv <virtual_environment_name>
+
+# Virtual Environments in 165 server - 
+Tensorflow_1.14_VIRT - 
+$ source ~/Tensorflow_1.14_VIRT/bin/activate
+
+Tensorflow2.2_venv/
+$ source ~/Tensorflow2.2_VIRT/bin/activate
+
+Tensorflow2.6_venv/
+$ source ~/Tensorflow2.6_venv/bin/activate
+
+# Playing with docker
+
+$ sudo docker ps -a   --> to display all running docker
+$ sudo docker start  <docker_name>  --> to start a docker 
+$ sudo docker attach <docker_name>   --> to attach a running docker
+$ ctrl + p + q  --> detach without stopping docker
+$ sudo docker images  -> to list all available images
+$ sudo docker image rm <image_id> --> to remove a docker image 
+$ sudo docker run -e NVIDIA_VISIBLE_DEVICES=0,1,2,3 --runtime=nvidia -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -e XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR -i -d -t --name webClassifier --hostname webClassifier -p 2224:22 -p 8022:8080 -v /data/shreyash:/data/ tensorflow/tensorflow:latest-gpu bash
+
+# ssh into docker
+ssh root@10.210.0.165 -p 2224
+pwd - Welcome@123
+
+# To access screen
+screen -rd train
+
+
+### GIT Commands - 
+working tree - 
+staging area - 
+$ git add <file/dir name>   --> to add  perticula file/dir
+$ git add .   --> to add all changes in workking directory
+$ git commit -m "<commit message>"   --> to  create checkpoint.
+$ git status 	-->  to check status for files. And  see working and staging area
+$ git ls-files   --> to see list of files being tracked by Git
+$ git log 		--> to see commit history
+$ git fetch   --> to check local  repo and remote sync
+$ git pull 		--> it will fetch commit form remote and merge with current commit
+$ git push 		--> to push changes to remoyte repo branch
+
+
