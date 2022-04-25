@@ -1,0 +1,72 @@
+python main.py downloader --classes Hat --type_csv all --n_threads 30 --noLabels
+
+for file in "/home/gpu1/pooja/coco/nonporn_final/"*.jpg; do
+    mv -- "$file" "/home/gpu1/pooja/testing/porn_nonporn_data/";
+done
+
+for file in "/home/gpu2/shreyash/OIDv4_ToolKit/OID/Dataset/train/Combined_images_gpu1/"*.jpg; do
+	mv -- "$file" "/home/gpu2/shreyash/OIDv4_ToolKit/OID/Dataset/train/Combined_images/";
+done
+
+df -h
+
+sudo du -sh /dir      ----- check space used by dir
+
+ls -f | wc -l
+ls -l | wc -l
+find -maxdepth 1 -type f | wc -l
+find -type f | wc -l
+
+find . -type f | awk -F. '!a[$NF]++{print $NF}'     ----- to find extension of files in directories
+
+pip freeze > requirements123.txt                   ------ create requirements file of virtual env
+pip install -r requirements_docker.txt
+
+sudo kill -9 processid                             ------ kill process
+
+find . -type f -name "*.txt"					  ------- find extension in directories
+
+ssh root@10.210.0.182 -p 2250
+
+
+find . -type f \( -name "*.sh" -o -name "*.txt" \)
+
+find /data/cropping/croppedfaces -mindepth 1 -type f -name "*.jpg" -printf x | wc -c     ---- find count of jpg images
+
+
+sudo find . -name "*.JPG" -exec mv "{}" /data/cropping/corrupt1/ \;   ---- mv file with extension
+
+sudo umount -l /mnt/214data/   ---- unmount
+
+sudo sshfs -o allow_other,default_permissions root@10.210.0.214:/ /mnt/214data/
+
+rename -f 's/.jpeg.jpg$/.jpg/' /data/cropping/croppedfaces_validation/**/*.jpeg.jpg     --- to rename/change extension (-f to replace existing file)
+
+
+find . -type d -empty     --- find empty folders
+
+
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'    ---- command to run on cpu
+/165backup/data/Python_Scripts_Abhi/
+
+unzip filename.zip -d destinationfolder
+unrar x filename.zip 
+tar -xvf <tar file name> -C <location to specified directory>   ---- Extraction of tar file
+tar -xvzf <tar.gz file name>   -C <location to specified directory>  ---- Extraction of tar.gz file
+   
+
+find . -maxdepth 1 -type f |head -1000|xargs cp -t "$destdir"    --- move n files
+ 
+=LEFT(A1,FIND("g ",A1))  
+=RIGHT(A1,LEN(A1)-FIND("g ",A1))
+
+
+Mount commands
+lsblk
+fdisk -l
+sudo mount /dev/sdb1 /mnt/
+
+
+sudo cp -vnpr /xxx/* /yyy   ---- where xxx = source ,yyy = destination,v = verbose,n = no clobber (no overwrite),p = preserve permissions,r = recursive
+
+cp -a ./Cropped_faces_semendata_train/. "/home/gpu2/shreyash/semen_data/finetune_model/Data4class/training/semen_face/"   --- copy all files from one directory to another
